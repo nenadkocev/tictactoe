@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/board" />
+
+    <ImageView
+        android:id="@+id/iv12"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignTop="@+id/iv11"
+        android:layout_centerHorizontal="true"
+        android:onClick="click"
+        android:tag="0 1"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv22"
+        android:layout_width="128dp"
+        android:layout_height="134dp"
+        android:layout_centerInParent="true"
+        android:onClick="click"
+        android:tag="1 1"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv33"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/iv31"
+        android:onClick="click"
+        android:tag="2 2"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv21"
+        android:layout_width="128dp"
+        android:layout_height="134dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:onClick="click"
+        android:tag="1 0"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv23"
+        android:layout_width="128dp"
+        android:layout_height="134dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:onClick="click"
+        android:tag="1 2"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv31"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="81dp"
+        android:onClick="click"
+        android:tag="2 0"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv32"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignTop="@+id/iv31"
+        android:layout_centerHorizontal="true"
+        android:onClick="click"
+        android:tag="2 1"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv11"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="85dp"
+        android:onClick="click"
+        android:tag="0 0"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/iv13"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/iv11"
+        android:onClick="click"
+        android:tag="0 2"
+        app:srcCompat="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tvWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="18dp"
+        android:textSize="35sp" />
+</RelativeLayout>
