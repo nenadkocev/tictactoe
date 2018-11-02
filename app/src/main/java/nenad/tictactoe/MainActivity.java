@@ -72,35 +72,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int chechForWin(int number){
-        int k = 0;
+        int numOfRows = 0;
+        int numOfColumns = 0;
 
         //checking for winner by rows
         //if someone won return number else return 0
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
-                if(matrix[i][j] == number)
-                    k++;
-            }
-            if(k == 3)
-                return number;
-            k = 0;
-        }
+//                if(matrix[i][j] == number)
+//                    numOfRows++;
 
-        //checking for winner by columns
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
-                if(matrix[j][i] == number)
-                    k++;
+                numOfRows = matrix[i][j] == number ? ++numOfRows : numOfRows;
+                numOfColumns = matrix[j][i] == number ? ++numOfColumns : numOfColumns;
             }
-            if(k == 3)
+            if(numOfRows == 3 || numOfColumns == 3)
                 return number;
-            k = 0;
+            numOfRows = 0;
         }
+//
+//        //checking for winner by columns
+//        for(int i = 0; i < 3; i++){
+//            for(int j = 0; j < 3; j++){
+//                if(matrix[j][i] == number)
+//                    numOfRows++;
+//            }
+//            if(numOfRows == 3)
+//                return number;
+//            numOfRows = 0;
+//        }
 
+        int k = 0;
         //checking for winner by main diagonal
         for(int i = 0, j = 0; i < 3; i++, j++){
-            if(matrix[i][j] == number)
-                k++;
+//            if(matrix[i][j] == number)
+//                k++;
+
+            k = matrix[i][j] == number ? ++k : k;
         }
         if(k == 3)
             return number;
@@ -108,8 +115,11 @@ public class MainActivity extends AppCompatActivity {
 
         //checking for winner by secondary diagonal
         for(int i = 2, j = 0; i >= 0; i--, j++){
-            if (matrix[i][j] == number)
-                k++;
+//            if (matrix[i][j] == number)
+//                k++;
+
+            k = matrix[i][j] == number ? ++k : k;
+
         }
         if(k == 3)
             return number;
