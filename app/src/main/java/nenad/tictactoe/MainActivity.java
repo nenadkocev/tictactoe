@@ -57,6 +57,23 @@ public class MainActivity extends AppCompatActivity {
             endGame(0);
     }
 
+    public void resetButtonClick(View view){
+        playerTurn = true;
+        gameOn = true;
+        moves = 0;
+        TextView textViewWinner = findViewById(R.id.tvWinner);
+        textViewWinner.setText("");
+        for(int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                String imageId = "iv" + (i+1) + (j+1);
+                int resID = getResources().getIdentifier(imageId, "id", getPackageName());
+                View image = findViewById(resID);
+                ((ImageView) image).setImageResource(android.R.color.transparent);
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
     private void endGame(int i) {
         String winner = null;
         if(i == 0)
@@ -75,38 +92,22 @@ public class MainActivity extends AppCompatActivity {
         int numOfRows = 0;
         int numOfColumns = 0;
 
-        //checking for winner by rows
+        //checking for winner by rows and columns
         //if someone won return number else return 0
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
-//                if(matrix[i][j] == number)
-//                    numOfRows++;
-
                 numOfRows = matrix[i][j] == number ? ++numOfRows : numOfRows;
                 numOfColumns = matrix[j][i] == number ? ++numOfColumns : numOfColumns;
             }
             if(numOfRows == 3 || numOfColumns == 3)
                 return number;
             numOfRows = 0;
+            numOfColumns = 0;
         }
-//
-//        //checking for winner by columns
-//        for(int i = 0; i < 3; i++){
-//            for(int j = 0; j < 3; j++){
-//                if(matrix[j][i] == number)
-//                    numOfRows++;
-//            }
-//            if(numOfRows == 3)
-//                return number;
-//            numOfRows = 0;
-//        }
 
         int k = 0;
         //checking for winner by main diagonal
         for(int i = 0, j = 0; i < 3; i++, j++){
-//            if(matrix[i][j] == number)
-//                k++;
-
             k = matrix[i][j] == number ? ++k : k;
         }
         if(k == 3)
@@ -115,11 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         //checking for winner by secondary diagonal
         for(int i = 2, j = 0; i >= 0; i--, j++){
-//            if (matrix[i][j] == number)
-//                k++;
-
             k = matrix[i][j] == number ? ++k : k;
-
         }
         if(k == 3)
             return number;

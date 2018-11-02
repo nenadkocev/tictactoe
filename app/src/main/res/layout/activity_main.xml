@@ -116,4 +116,13 @@
         android:layout_marginBottom="10dp"
         android:layout_marginStart="18dp"
         android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/btnRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:onClick="resetButtonClick"
+        android:text="Reset" />
 </RelativeLayout>
